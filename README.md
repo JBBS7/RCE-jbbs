@@ -2,14 +2,16 @@
 
 You can use the [editor on GitHub](https://github.com/JBBS7/RCE-jbbs/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-                                      IMPLEMENTATION OF REMOTE 
-DATE: 23.10.2021               COMMAND EXECUTION (RCE)
+                                       
+DATE: 23.10.2021       IMPLEMENTATION OF REMOTE COMMAND EXECUTION (RCE)
 
-AIM
+AIM:
 To implement Remote Command Execution(RCE). 
 
 ALGORITHM:
-CLIENT SIDE
+
+CLIENT SIDE:-
+
 1. Establish a connection between the Client and Server.
 Socket client=new Socket("127.0.0.1",6555);
 2. Create instances for input and output streams.
@@ -20,7 +22,8 @@ Send themessage to its output
 str=br.readLine();
 ps.println(str);
 
-SERVER SIDE
+SERVER SIDE:-
+
 1. Accept the connection request by the client.
 ServerSocket server=new ServerSocket(6555);
 Sockets=server.accept();
@@ -33,50 +36,83 @@ Process p=r.exec(str);
 
 CODE:
 CLIENT PROGRAM
+
 import java.io.*;
-import java.net.*;
+
+import java.net.*; 
+
 class clientRCE
+
 {
+
 public static void main(String args[]) throws IOException
+
 {
+
 try
+
 {
+
 String str;Socket client=new Socket("127.0.0.1",6555);
+
 PrintStream ps=new PrintStream(client.getOutputStream());
+
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+
 System.out.println("\t\t\t\tCLIENT WINDOW\n\n\t\tEnter TheCommand:");
+
 str=br.readLine();
+
 ps.println(str);
-}
-catch(IOException e)
-{
-System.out.println("Error"+e); }
-}
+
 }
 
-SERVER PROGRAM
-import java.io.*;
-import java.net.*;
-class serverRCE
+catch(IOException e)
+
 {
+
+System.out.println("Error"+e); }
+
+}}
+
+
+SERVER PROGRAM
+
+import java.io.*;
+
+import java.net.*;
+
+class serverRCE
+
+{
+
 public static void main(String args[]) throws IOException
+
 {
  try
+ 
 {
 String str;
+
 ServerSocket server=new ServerSocket(6555);
+
 Socket s=server.accept();
+
 BufferedReader br=new BufferedReader(new InputStreamReader(s.getInputStream()));
+
 str=br.readLine();
+
 Runtime r=Runtime.getRuntime();
+
 Process p=r.exec(str);
 }
 catch(IOException e)
+
 {
 System.out.println("Error"+e);
-}
-}
-}
+
+}}}
+
 
 OUTPUT
 ![image](https://user-images.githubusercontent.com/94218612/142985144-97016561-0063-4f9d-ac50-2130e0dc4426.png)
