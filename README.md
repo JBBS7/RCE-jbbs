@@ -2,8 +2,8 @@
 
 You can use the [editor on GitHub](https://github.com/JBBS7/RCE-jbbs/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
-                                       
-DATE: 23.10.2021       IMPLEMENTATION OF REMOTE COMMAND EXECUTION (RCE)
+DATE: 23.10.2021      
+IMPLEMENTATION OF REMOTE COMMAND EXECUTION (RCE)
 
 AIM:
 To implement Remote Command Execution(RCE). 
@@ -114,11 +114,14 @@ System.out.println("Error"+e);
 }}}
 
 
+
 OUTPUT
+
 ![image](https://user-images.githubusercontent.com/94218612/142985144-97016561-0063-4f9d-ac50-2130e0dc4426.png)
 
 
 RESULT
+
 Thus the implementation RCE is done & executed successfully.
 
 
